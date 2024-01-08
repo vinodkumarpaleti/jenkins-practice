@@ -8,7 +8,7 @@ pipeline {
                 /* sh 'ls -ltr'
                 sh 'pwd' */
                 sh '''
-                echo "This line is for checking the webhook config"
+                echo "This line is for checking the webhook configuration"
                  ls -ltr
                  pwd
                  echo "These are CMD to test" 
