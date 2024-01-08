@@ -12,6 +12,7 @@ pipeline {
                  pwd
                  echo "These are CMD to test" 
                 '''
+                echo "This line is for checking the webhook config"
             }
         }
         stage('Test') {
