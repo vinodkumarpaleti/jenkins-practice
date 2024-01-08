@@ -8,11 +8,11 @@ pipeline {
                 /* sh 'ls -ltr'
                 sh 'pwd' */
                 sh '''
+                echo "This line is for checking the webhook config"
                  ls -ltr
                  pwd
                  echo "These are CMD to test" 
-                '''
-                echo "This line is for checking the webhook config"
+                '''           
             }
         }
         stage('Test') {
