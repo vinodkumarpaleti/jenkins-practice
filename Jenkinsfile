@@ -17,6 +17,7 @@ pipeline {
                  ls -ltr
                  pwd
                  echo "These are CMD to test" 
+                 printenv
                 '''           
             }
         }
