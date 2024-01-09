@@ -75,6 +75,14 @@ pipeline {
                 echo "Hello, ${PERSON}, nice to meet you."
             }
         }
+        stage('PROD Deploy'){
+            when {
+                environment name: 'USER', value: 'vinod'
+            }
+            steps{
+                echo "deploying to PROD"
+            }
+        }
     }
     post {
         always {
