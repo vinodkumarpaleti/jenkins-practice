@@ -1,9 +1,9 @@
 pipeline {
     agent { node { label 'AGENT-1' } }
     options {
-        timeout(time: 1, unit: 'HOURS') 
+        timeout(time: 1, unit: 'HOURS')
     }
-    environment { 
+    environment {
         USER = 'vinodkumar'
     }
     stages {
@@ -16,9 +16,9 @@ pipeline {
                 echo "This line is for testing the webhook configuration"
                  ls -ltr
                  pwd
-                 echo "These are CMD to test" 
+                 echo "These are CMD to test"
                  printenv
-                '''           
+                '''
             }
         }
         stage('Test') {
@@ -32,14 +32,22 @@ pipeline {
             }
         }
     }
-      post { 
-        always { 
+    stage('Example') {
+            environment {
+                AUTH = credentials('ssh-auth')
+            }
+            steps {
+                sh 'printenv'
+            }
+    }
+    post {
+        always {
             echo 'I will always run whether job is success or not'
         }
-        success{
+        success {
             echo 'I will run only when job is success'
         }
-        failure{
+        failure {
             echo 'I will run when failure'
         }
     }
